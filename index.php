@@ -48,6 +48,17 @@
 							<li>Recipe can have many comments</li>
 							<li>Recipe can have many tags</li>
 						</ul>
+					<h4>Comment Relations</h4>
+						<ul>
+							<li>comment can have on email</li>
+							<li>comment can have one name</li>
+							<li>comment can have one dateTime</li>
+							<li>comment can have one avatar</li>
+						</ul>
+					<h4>Tag Relations</h4>
+						<ul>
+							<li>tag can be on many recipes</li>
+						</ul>
 
 	</body>
 </html>
