@@ -34,7 +34,6 @@
 							<li>email</li>
 							<li>name</li>
 							<li>dateTime</li>
-							<li>avatar</li>
 							<li>replyContent</li>
 						</ul>
 					<h4>Tag</h4>
@@ -50,13 +49,8 @@
 						</ul>
 					<h4>Comment Relations</h4>
 						<ul>
-							<li>comment can have one email</li>
-							<li>comment can have one name</li>
-							<li>comment can have one dateTime</li>
-							<li>comment can have one avatar</li>
-							<li>comment can have one replyContent</li>
+							<li>many comments to many recipes</li>
 							<li>each comment can have many comments</li>
-
 						</ul>
 					<h4>Tag Relations</h4>
 						<ul>
