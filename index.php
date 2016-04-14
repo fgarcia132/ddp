@@ -55,6 +55,7 @@
 							<li>comment can have one dateTime</li>
 							<li>comment can have one avatar</li>
 							<li>comment can have one replyContent</li>
+							<li>each comment can have many comments</li>
 
 						</ul>
 					<h4>Tag Relations</h4>
