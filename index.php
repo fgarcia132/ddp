@@ -25,9 +25,7 @@
 				<h3>Entity Attributes</h3>
 					<h4>recipe</h4>
 						<ul>
-							<li>recipe</li>
-							<li>comment</li>
-							<li>tag</li>
+							<li>recipeContent</li>
 						</ul>
 					<h4>Comment</h4>
 						<ul>
