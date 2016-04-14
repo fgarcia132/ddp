@@ -47,7 +47,7 @@
 						</ul>
 					<h4>Comment Relations</h4>
 						<ul>
-							<li>many comments to one recipes</li>
+							<li>many comments to one recipe</li>
 							<li>each comment can have many comments</li>
 						</ul>
 					<h4>Tag Relations</h4>
