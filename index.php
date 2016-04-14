@@ -45,20 +45,21 @@
 				<h3>Primary Keys and Foreign Keys</h3>
 					<h4>Recipe Relations</h4>
 						<ul>
-							<li>Recipe can have many comments</li>
-							<li>Recipe can have many tags</li>
+							<li>many recipes can have many comments</li>
+							<li>many recipes can have many tags</li>
 						</ul>
 					<h4>Comment Relations</h4>
 						<ul>
-							<li>comment can have on email</li>
+							<li>comment can have one email</li>
 							<li>comment can have one name</li>
 							<li>comment can have one dateTime</li>
 							<li>comment can have one avatar</li>
 							<li>comment can have one replyContent</li>
+
 						</ul>
 					<h4>Tag Relations</h4>
 						<ul>
-							<li>tag can be on many recipes</li>
+							<li>many tags can be on many recipes</li>
 						</ul>
 
 	</body>
