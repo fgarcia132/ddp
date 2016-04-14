@@ -43,7 +43,11 @@
 						</ul>
 		<hr>
 				<h3>Primary Keys and Foreign Keys</h3>
-					<h4>Comment Relations</h4>
-						<p></p>
+					<h4>Recipe Relations</h4>
+						<ul>
+							<li>Recipe can have many comments</li>
+							<li>Recipe can have many tags</li>
+						</ul>
+
 	</body>
 </html>
