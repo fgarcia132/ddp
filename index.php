@@ -23,7 +23,7 @@
 					</ul>
 		<hr>
 				<h3>Entity Attributes</h3>
-					<h4>recipe</h4>
+					<h4>Recipe</h4>
 						<ul>
 							<li>recipeContent</li>
 						</ul>
