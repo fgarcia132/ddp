@@ -29,6 +29,7 @@
 						</ul>
 					<h4>Comment</h4>
 						<ul>
+							<li>email</li>
 							<li>name</li>
 							<li>dateTime</li>
 							<li>avatar</li>
