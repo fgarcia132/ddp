@@ -16,10 +16,15 @@
 			<h2>2. Back End</h2>
 				<h3>Entities</h3>
 					<ul>
+						<li>recipe</li>
 						<li>comment</li>
 						<li>tag</li>
 					</ul>
 				<h3>Entity Attributes</h3>
+					<h4>recipe</h4>
+						<ul>
+							<li>recipe</li>
+						</ul>
 					<h4>Comment</h4>
 						<ul>
 							<li>name</li>
@@ -31,5 +36,8 @@
 						<ul>
 							<li>foodType</li>
 						</ul>
+				<h3>Primary Keys and Foreign Keys</h3>
+					<h4>Comment Relations</h4>
+						<p></p>
 	</body>
 </html>
