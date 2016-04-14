@@ -56,7 +56,7 @@
 						</ul>
 		<hr>
 				<h3>ERD</h3>
-					<img src="ddp1.svg" />
+					<img src="ddp2.svg" />
 
 	</body>
 </html>
