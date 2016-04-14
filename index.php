@@ -56,6 +56,5 @@
 						<ul>
 							<li>many tags can be on many recipes</li>
 						</ul>
-
 	</body>
 </html>
