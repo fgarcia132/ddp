@@ -20,6 +20,7 @@
 						<li>comment</li>
 						<li>tag</li>
 					</ul>
+		<hr>
 				<h3>Entity Attributes</h3>
 					<h4>recipe</h4>
 						<ul>
@@ -36,6 +37,7 @@
 						<ul>
 							<li>foodType</li>
 						</ul>
+		<hr>
 				<h3>Primary Keys and Foreign Keys</h3>
 					<h4>Comment Relations</h4>
 						<p></p>
