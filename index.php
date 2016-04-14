@@ -19,5 +19,17 @@
 						<li>comment</li>
 						<li>tag</li>
 					</ul>
+				<h3>Entity Attributes</h3>
+					<h4>Comment</h4>
+						<ul>
+							<li>name</li>
+							<li>dateTime</li>
+							<li>avatar</li>
+							<li>replyContent</li>
+						</ul>
+					<h4>Tag</h4>
+						<ul>
+							<li>foodType</li>
+						</ul>
 	</body>
 </html>
