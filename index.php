@@ -26,6 +26,7 @@
 					<h4>Recipe</h4>
 						<ul>
 							<li>recipeContent</li>
+							<li>recipeId</li>
 						</ul>
 					<h4>Comment</h4>
 						<ul>
@@ -56,7 +57,7 @@
 						</ul>
 		<hr>
 				<h2>ERD</h2>
-					<img src="ddp4.svg" />
+					<img src="ddp5.svg" />
 
 	</body>
 </html>
