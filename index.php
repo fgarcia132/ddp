@@ -55,7 +55,7 @@
 							<li>many tags can be on many recipes</li>
 						</ul>
 		<hr>
-				<h3>ERD</h3>
+				<h2>ERD</h2>
 					<img src="ddp4.svg" />
 
 	</body>
