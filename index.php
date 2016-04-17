@@ -34,9 +34,11 @@
 							<li>name</li>
 							<li>dateTime</li>
 							<li>replyContent</li>
+							<li>commentId</li>
 						</ul>
 					<h4>Tag</h4>
 						<ul>
+							<li>tagId</li>
 							<li>foodType</li>
 						</ul>
 		<hr>
