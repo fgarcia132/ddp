@@ -10,6 +10,7 @@ CREATE TABLE recipe (
 
 CREATE TABLE comment (
         commentId INT UNSIGNED AUTO_INCREMENT NOT NULL,
+		  recipeId INT UNSIGNED NOT NULL,
         email VARCHAR(128) NOT NULL,
         dateTime TIMESTAMP NOT NULL,
         replyContent VARCHAR(1000) NOT NULL,
@@ -20,6 +21,7 @@ CREATE TABLE comment (
 
 CREATE TABLE tag (
         tagId INT UNSIGNED NOT NULL,
+	     recipeId INT UNSIGNED,
         foodType VARCHAR(128) NOT NULL,
         INDEX(recipeId),
         FOREIGN KEY(recipeId) REFERENCES recipe(recipeId),
