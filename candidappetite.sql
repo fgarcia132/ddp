@@ -5,6 +5,7 @@ DROP TABLE IF EXISTS tag;
 CREATE TABLE recipe (
         recipeId INT UNSIGNED AUTO_INCREMENT NOT NULL,
         recipeContent VARCHAR(5000) NOT NULL,
+        recipeDate DATETIME NOT NULL,
         PRIMARY KEY(recipeId)
 );
 
