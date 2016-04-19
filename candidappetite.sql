@@ -5,7 +5,7 @@ DROP TABLE IF EXISTS recipe;
 CREATE TABLE recipe (
         recipeId INT UNSIGNED AUTO_INCREMENT NOT NULL,
         recipeContent VARCHAR(5000) NOT NULL,
-        recipeDate DATETIME NOT NULL,
+        recipeDate TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,
 	     PRIMARY KEY (recipeId)
 );
 
