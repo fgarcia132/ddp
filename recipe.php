@@ -26,6 +26,33 @@ class Recipe implements \JsonSerializable {
 	 */
 	private $recipeDate;
 	/**
+	 * constructor for this recipe
+	 *
+	 * @param int|null $newRecipeId id of this recipe or null if a new Recipe
+	 * @param string $newRecipeContent string containing actual recipe data
+	 * @param \DateTime|string|null $newRecipeDate date and time Recipe was posted or null if set to current date and time
+	 * @throws \InvalidArgumentException if data types are not valid
+	 * @throws \RangeException if data value are out of bounds (e.g., strings too long, negative int
+	 * @throws \TypeError if data types violate type hints
+	 * @throws \Exception if some other exception occurs
+	 */
+	public function __construct(int $newRecipeId = null, int $newRecipeId, string $newRecipeContent, $newRecipeDate = null) {
+		try {
+			$this->setRecipeId($newRecipeId);
+			$this->setRecipecontent($newRecipeContent);
+			$this->setRecipedate($newRecipeDate);
+		} catch(\InvalidArgumentException $invalidArgument) {
+			throw(new \InvalidArgumentException($invalidArgument->getMessage(), 0, $invalidArgument));
+		} catch(\RangeException $range) {
+			throw(new \RangeException($range->getMessage(), 0, $range));
+		} catch(\TypeError $typeError) {
+			throw(new \TypeError($typeError->getMessage(), 0, $typeError));
+		} catch(\Exception $exception) {
+			throw(new \Exception($exception->getMessage(), 0, $exception));
+		}
+	}
+
+	/**
 	 * accessor method for recipe id
 	 *
 	 * @return int|null value of recipe id
@@ -81,7 +108,7 @@ class Recipe implements \JsonSerializable {
 	/**
 	 * accessor method for recipe content
 	 *
-	 * @return value of recipe content
+	 * @return string value of recipe content
 	 */
 	public function getRecipeContent() {
 		return($this->recipeContent);
@@ -253,5 +280,50 @@ class Recipe implements \JsonSerializable {
 			}
 		}
 		return($recipes);
+	}
+	/**
+	 * gets the Recipe by RecipeId
+	 *
+	 * @param \PDO $pdo PDO connecttion object
+	 * @param int $recipeId recipe id to search for
+	 * @return Recipe|null Recipe found or null if not found
+	 * @throws \PDOException when mySQL related errors occur
+	 * @throws \TypeError when variables are not correct data type
+	 */
+	public static function getRecipeBYReceipeID(\PDO $pdo, int $recipeId) {
+		// sanitize the recipeId before searching
+		if($recipeId <= 0) {
+			throw(new \PDOException("recipe id is not positive"));
+		}
+
+		//create query template
+		$query = "SELECT recipeId, recipeContent, recipeDate FROM recipe WHERE recipeId = :recipeId";
+		$statement = $pdo->prepare($query);
+
+		//bind the recipe id to the place holder in the template
+		$parameters = array("recipeId" => $recipeId);
+		$statement->execute($parameters);
+
+		// grab the recipe from mySQL
+		try {
+			$recipe = null;
+			$statement->SetFetchMode(\PDO::FETCH_ASSOC);
+			$row = $statement->fetch();
+			if($row !== false) {
+				$recipe = new Recipe($row["recipeId"], $row["recipeContent"], $row["recipeDate"]);
+			}
+		} catch(\Exception $exception) {
+				// if the row couldn't be converted, rethrow it
+				throw(new \PDOException($exception->getMessage(), 0, $exception));
+		}
+		return($recipe);
+	}
+	/**
+	 * formats the state variables for JSON serialization
+	 *
+	 * @return array resulting state variables to serialize
+	 */
+	public function jsonSerialize() {
+		$jsonArray = get_object_vars($this);
 	}
 }
