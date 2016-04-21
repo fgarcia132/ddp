@@ -111,6 +111,14 @@ class Recipe implements \JsonSerializable {
 		$this->recipeContent = $newRecipeContent;
 	}
 	/**
+	 * accessor method for recipe date
+	 *
+	 * @return \DateTime value of recipe date
+	 */
+	public function getRecipeDate() {
+		return $this->recipeDate;
+	}
+	/**
 	 * mutator method for recipe date
 	 *
 	 * @param \DateTime|string|null $newRecipeDate recipe date as a DateTime object or string (or null to load current time)
