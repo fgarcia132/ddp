@@ -189,8 +189,7 @@ class Recipe implements \JsonSerializable {
 		$statement = $pdo->prepare($query);
 
 		// bind the member variables to the place holders in the template
-		$formattedDate = $this->recipeDate->format("Y-m-d H:i:s");
-		$parameters = ["recipeContent" => $this-> recipeContent, "recipeDate" => $formattedDate];
+		$parameters = ["recipeContent" => $this-> recipeContent];
 		$statement->execute($parameters);
 
 		// update the null recipeId with what mySQL just gave us
@@ -213,7 +212,6 @@ class Recipe implements \JsonSerializable {
 		// create query template
 		$query = "DELETE FROM recipe WHERE recipeId = :reciepeId";
 		$statement = $pdo->prepare($query);
-
 		// bind the member variables to the place holder in the template
 		$parameters = ["recipeId" => $this->recipeId];
 		$statement->execute($parameters);
@@ -233,12 +231,11 @@ class Recipe implements \JsonSerializable {
 		}
 
 		// create query template
-		$query = "UPDATE recipe SET recipeContent = : recipeContent, recipeDate = :recipeDate WHERE recipeId = :recipeId";
+		$query = "UPDATE recipe SET recipeContent = :recipeContent, recipeDate = :recipeDate WHERE recipeId = :recipeId";
 		$statement = $pdo->prepare($query);
 
 		// bind the member variables to the place holder in the template
-		$formattedDate = $this->recipeDate->format("Y-m-d H:i:s");
-		$parameters = ["recipeContent" => $this->recipeContent, "recipeDate" => $formattedDate, "recipeId" => $this->recipeId];
+		$parameters = ["recipeId" => $this->recipeId, "recipeContent" => $this-> recipeContent, "recipeId" =>$this->recipeId];
 		$statement->execute($parameters);
 	}
 	/**
@@ -246,9 +243,9 @@ class Recipe implements \JsonSerializable {
 	 *
 	 * @param \PDO $pdo PDO connection object
 	 * $param strings $recipeContent recipe content to search for
-	 * @return \SpliFixedArray of Recipes found
+	 * @return \SplFixedArray of Recipes found
 	 * @throws \PDOException when mySQL related errors occur
-	 * @throws \TypeError when variables are not the correct data tppe
+	 * @throws \TypeError when variables are not the correct data type
 	 */
 	public static function getRecipeByRecipeContent(\PDO $pdo, string $recipeContent) {
 		// sanitize the description before searching
@@ -272,7 +269,8 @@ class Recipe implements \JsonSerializable {
 		$statement->setFetchMode(\PDO::FETCH_ASSOC);
 		while(($row = $statement->fetch()) !== false) {
 			try {
-				$recipes - new Recipe($row["recipeId"], $row[recipeId], $row["recipeContent"], $row["recipeDate"]);
+				$recipe = new Recipe($row["recipeId"], $row["recipeId"], $row["recipeContent"], $row["recipeDate"]);
+				$recipes[$recipes->key()] = $recipe;
 				$recipes->next();
 			} catch(\Exception $exception) {
 				// if the row couldn't be converted, rethrow it
@@ -284,13 +282,13 @@ class Recipe implements \JsonSerializable {
 	/**
 	 * gets the Recipe by RecipeId
 	 *
-	 * @param \PDO $pdo PDO connecttion object
+	 * @param \PDO $pdo PDO connection object
 	 * @param int $recipeId recipe id to search for
 	 * @return Recipe|null Recipe found or null if not found
 	 * @throws \PDOException when mySQL related errors occur
 	 * @throws \TypeError when variables are not correct data type
 	 */
-	public static function getRecipeBYReceipeID(\PDO $pdo, int $recipeId) {
+	public static function getRecipeByRecipeID(\PDO $pdo, int $recipeId) {
 		// sanitize the recipeId before searching
 		if($recipeId <= 0) {
 			throw(new \PDOException("recipe id is not positive"));
@@ -317,6 +315,18 @@ class Recipe implements \JsonSerializable {
 				throw(new \PDOException($exception->getMessage(), 0, $exception));
 		}
 		return($recipe);
+	}
+	/**
+	 * gets all tweets
+	 *
+	 * @param \PDO $pdo PDO connection object
+	 * @return \SplFixedArray SplFixedArray of recipes found or null if not found
+	 * @throws \PDOException when mySQL related errors occur
+	 * @throws \TypeError when variables are not the correct data type
+	 */
+	public static function getAllRecipes(\PDO $pdo) {
+		// create query template
+		$query = "SELECT recipeId, recipeContent, recipeDate"
 	}
 	/**
 	 * formats the state variables for JSON serialization
