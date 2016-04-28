@@ -23,41 +23,41 @@
 					</ul>
 		<hr>
 				<h3>Entity Attributes</h3>
-					<h4>Recipe</h4>
-						<ul>
-							<li>recipeContent</li>
-							<li>recipeId</li>
-							<li>recipeDate</li>
-						</ul>
-					<h4>Comment</h4>
-						<ul>
-							<li>email</li>
-							<li>name</li>
-							<li>dateTime</li>
-							<li>replyContent</li>
-							<li>commentId</li>
-						</ul>
-					<h4>Tag</h4>
-						<ul>
-							<li>tagId</li>
-							<li>foodType</li>
-						</ul>
+				<h4>Recipe</h4>
+					<ul>
+						<li>recipeContent</li>
+						<li>recipeId</li>
+						<li>recipeDate</li>
+					</ul>
+				<h4>Comment</h4>
+					<ul>
+						<li>email</li>
+						<li>name</li>
+						<li>dateTime</li>
+						<li>replyContent</li>
+						<li>commentId</li>
+					</ul>
+				<h4>Tag</h4>
+					<ul>
+						<li>tagId</li>
+						<li>foodType</li>
+					</ul>
 		<hr>
 				<h3>Primary Keys and Foreign Keys</h3>
-					<h4>Recipe Relations</h4>
-						<ul>
-							<li>many recipes can have many comments</li>
-							<li>many recipes can have many tags</li>
-						</ul>
-					<h4>Comment Relations</h4>
-						<ul>
-							<li>many comments to one recipe</li>
-							<li>each comment can have many comments</li>
-						</ul>
-					<h4>Tag Relations</h4>
-						<ul>
-							<li>many tags can be on many recipes</li>
-						</ul>
+				<h4>Recipe Relations</h4>
+					<ul>
+						<li>many recipes can have many comments</li>
+						<li>many recipes can have many tags</li>
+					</ul>
+				<h4>Comment Relations</h4>
+					<ul>
+						<li>many comments to one recipe</li>
+						<li>each comment can have many comments</li>
+					</ul>
+				<h4>Tag Relations</h4>
+					<ul>
+						<li>many tags can be on many recipes</li>
+					</ul>
 		<hr>
 				<h2>ERD</h2>
 					<img src="ddp6.svg" />
